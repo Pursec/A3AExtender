@@ -1,7 +1,7 @@
 class Templates {
-    class GM_Base; //import Vanilla_Base from A3A to use with defining a new vanilla template
+    class Vanilla_Base; //import Vanilla_Base from A3A to use with defining a new vanilla template
 
-    class Gaggle_GM_Reb : GM_Base
+    class Gaggle_GM_Reb : Vanilla_Base
     {
         
         basepath = QPATHTOFOLDER(Templates\Gaggle); //the path to the folder the template is located in, this translates to "\x\A3AE\addons\templates\Templates\Vanilla"
@@ -12,6 +12,8 @@ class Templates {
         name = "Näppä"; //the name shown in the selector
         file = "Gaggle_GM_Reb"; //the template file name
         maps[] = {}; //if this template should be prioritized on any maps (case sensetive to worldName)
+        forceDLC[] = {"gm"};
         climate[] = {"arid", "arctic"}; //climate that the template is meant for
+        description = "Buy our tires!";
     };
 };

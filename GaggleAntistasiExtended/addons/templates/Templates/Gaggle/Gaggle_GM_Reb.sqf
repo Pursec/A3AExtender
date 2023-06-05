@@ -1,3 +1,7 @@
+private _hasWs = "ws" in A3A_enabledDLC;
+private _hasLawsOfWar = "orange" in A3A_enabledDLC;
+private _hasApex = "expansion" in A3A_enabledDLC;
+private _hasContact = "enoch" in A3A_enabledDLC;
 ///////////////////////////
 //   Rebel Information   //
 ///////////////////////////
@@ -12,51 +16,56 @@
 //  Mission/HQ Objects  //
 //////////////////////////
 
-// All of bellow are optional overrides.
-["firstAidKits", ["gm_ge_firstaidkit_vehicle","gm_gc_firstaidkit_vehicle","gm_ge_army_firstaidkit_vehicle","gm_gc_army_medkit"]] call _fnc_saveToTemplate;  // Relies on autodetection. However, item is tested for for help and reviving.
-["mediKits", ["gm_gc_army_medbox","gm_ge_army_medkit_80"]] call _fnc_saveToTemplate;  // Relies on autodetection. However, item is tested for for help and reviving.
-["toolKits", ["gm_repairkit_01"]] call _fnc_saveToTemplate;  // Relies on autodetection.
-
-["flyGear", ["gm_ge_uniform_pilot_commando_blk", "gm_ge_uniform_pilot_commando_gry", "gm_ge_uniform_pilot_commando_oli", "gm_ge_uniform_pilot_commando_rolled_blk", "gm_ge_uniform_pilot_commando_rolled_gry", "gm_ge_uniform_pilot_commando_rolled_oli"]] call _fnc_saveToTemplate;
-
 //////////////////////////
-//       Vehicles       //
+//       vehicles      //
 //////////////////////////
 
-["vehiclesBasic", ["gm_ge_army_k125"]] call _fnc_saveToTemplate;
-["vehiclesLightUnarmed", ["gm_ge_army_iltis_cargo"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["gm_gc_army_uaz469_dshkm"]] call _fnc_saveToTemplate;
-["vehiclesTruck", ["gm_ge_army_kat1_451_cargo"]] call _fnc_saveToTemplate;
-["vehiclesAT", ["gm_gc_army_uaz469_spg9"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["CUP_I_Ural_ZU23_NAPA"]] call _fnc_saveToTemplate;
+["vehicleBasic", "gm_ge_army_k125"] call _fnc_saveToTemplate;
+["vehicleLightUnarmed", "gm_ge_army_iltis_cargo"] call _fnc_saveToTemplate;
+["vehicleLightArmed", "gm_gc_army_uaz469_dshkm"] call _fnc_saveToTemplate;
+["vehicleTruck", "gm_ge_army_kat1_451_cargo"] call _fnc_saveToTemplate;
+["vehicleAT", "gm_gc_army_uaz469_spg9"] call _fnc_saveToTemplate;
+["vehicleAA", "CUP_I_Ural_ZU23_NAPA"] call _fnc_saveToTemplate;
 
-["vehiclesBoat", ["I_C_Boat_Transport_02_F"]] call _fnc_saveToTemplate;
+["vehicleBoat", "I_C_Boat_Transport_02_F"] call _fnc_saveToTemplate;
+["vehicleRepair", "I_G_Offroad_01_repair_F"] call _fnc_saveToTemplate;
 
-["vehiclesPlane", ["gm_gc_civ_l410s_passenger"]] call _fnc_saveToTemplate;
+["vehiclePlane", "gm_gc_civ_l410s_passenger"] call _fnc_saveToTemplate;
+["vehiclePayloadPlane", "gm_gc_civ_l410s_passenger"] call _fnc_saveToTemplate;
 
-["vehiclesCivPlane", ["CUP_I_CESSNA_T41_UNARMED_HIL"]] call _fnc_saveToTemplate;
-["vehiclesCivCar", ["gm_gc_civ_p601", "gm_ge_civ_w123"]] call _fnc_saveToTemplate;
-["vehiclesCivTruck", ["gm_gc_civ_ural375d_cargo"]] call _fnc_saveToTemplate;
-["vehiclesCivHeli", ["gm_gc_civ_mi2p"]] call _fnc_saveToTemplate;
-["vehiclesCivBoat", ["C_Rubberboat"]] call _fnc_saveToTemplate;
+["vehicleCivPlane", "CUP_I_CESSNA_T41_UNARMED_HIL"] call _fnc_saveToTemplate;
+["vehicleCivCar", "gm_gc_civ_p601"] call _fnc_saveToTemplate;
+["vehicleCivTruck", "gm_gc_civ_ural375d_cargo"] call _fnc_saveToTemplate;
+["vehicleCivHeli", "gm_gc_civ_mi2p"] call _fnc_saveToTemplate;
+["vehicleCivBoat", "C_Rubberboat"] call _fnc_saveToTemplate;
+["vehicleCivBoxSupply", "C_Van_01_box_F"] call _fnc_saveToTemplate;
 
-["staticMGs", ["gm_gc_army_dshkm_aatripod"]] call _fnc_saveToTemplate;
-["staticAT", ["gm_gc_army_spg9_tripod"]] call _fnc_saveToTemplate;
-["staticAA", ["CUP_I_ZU23_NAPA"]] call _fnc_saveToTemplate;
+["staticMG", "gm_gc_army_dshkm_aatripod"] call _fnc_saveToTemplate;
+["staticAT", "gm_gc_army_spg9_tripod"] call _fnc_saveToTemplate;
+["staticAA", "CUP_I_ZU23_NAPA"] call _fnc_saveToTemplate;
 
-["staticMortars", ["CUP_O_2b14_82mm_RU"]] call _fnc_saveToTemplate;
+["staticMortar", "CUP_O_2b14_82mm_RU"] call _fnc_saveToTemplate;
 ["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 ["staticMortarMagFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
 
-["mineAT", "gm_mine_at_dm21"] call _fnc_saveToTemplate;         // , "gm_mine_at_dm1233"]]
-["mineAPERS", "gm_mine_ap_dm31"] call _fnc_saveToTemplate;
+["minesAT", ["gm_mine_at_dm21"]] call _fnc_saveToTemplate;         // , "gm_mine_at_dm1233"]]
+["minesAPERS", ["gm_mine_ap_dm31"]] call _fnc_saveToTemplate;
 
 ["breachingExplosivesAPC", [["DemoCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["gm_explosive_petn_charge", 1], ["DemoCharge_Remote_Mag", 2]]] call _fnc_saveToTemplate;
 
 #include "GM_Reb_Vehicle_Attributes.sqf"
+//////////////////////////////////////
+//       Antistasi Plus Stuff       //
+//////////////////////////////////////
 
+//classname, price, type, availability condition
+["blackMarketStock", [
+    ["gm_ge_army_iltis_cargo", 3500, "UNARMEDCAR", {true}],
+    ["gm_gc_army_uaz469_dshkm", 4500, "ARMEDCAR", {true}],
+    ["CUP_I_CESSNA_T41_UNARMED_HIL", 2000, "PLANE", {true}]
+]] call _fnc_saveToTemplate;
 ///////////////////////////
 //  Rebel Starting Gear  //
 ///////////////////////////
@@ -112,12 +121,12 @@ _rebUniforms = [
 
 private _dlcUniforms = [];
 
-if (allowDLCEnoch) then {_dlcUniforms append [
+if (_hasContact) then {_dlcUniforms append [
     "U_I_L_Uniform_01_camo_F"
 ];
 };
 
-if (allowDLCExpansion) then {_dlcUniforms append [
+if (_hasApex) then {_dlcUniforms append [
     "U_I_C_Soldier_Bandit_4_F",
     "U_I_C_Soldier_Bandit_1_F",
     "U_I_C_Soldier_Bandit_2_F",
